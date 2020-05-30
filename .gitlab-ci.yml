@@ -1,0 +1,16 @@
+image: node:13.14.0-alpine3.10
+
+cache:
+  paths:
+  - node_modules/
+
+stages:
+  - test
+
+testing:
+  stage: test
+  script:
+    yarn install --ignore-engines && yarn test
+  tags:
+    - docker
+

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      "~schema": ["src/schema"],
+      "~resolvers": ["src/resolvers"],
+      "~queries": ["src/resolvers/queries"],
+      "~mutations": ["src/resolvers/mutations"],
+      "~models": ["src/models"],
+      "~server": ["src/main"],
+      "~constants": ["src/constants"]
+    },
+    "lib": ["es6"],
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "skipLibCheck": true
+  },
+  "include": [
+      "./src/**/*",
+      "./db/**/*"
+  ],
+  "exclude": [
+    "./node_modules/*"
+  ]
+}

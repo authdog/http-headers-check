@@ -1,0 +1,77 @@
+service: atdg-hdrck-api
+frameworkVersion: '>=1.30.3 <3.2.0'
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  environment: ${file(./vars/secret.yml):${opt:stage, self:provider.stage}}
+  stage: prod
+  domainName: authdog.co
+
+plugins:
+  - serverless-offline
+  - ./plugins/offline-invalidate
+  - serverless-webpack
+  - serverless-plugin-warmup
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
+    includeModules: false   # Node modules configuration for packaging
+    packager: 'yarn'   # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
+  serverless-offline:
+    httpPort: 5501
+    lambdaPort: 5502
+    prefix: ''
+    noPrependStageInUrl: true
+  # webpackIncludeModules: true
+  domains:
+    prod: prod-headers-api.${self:provider.domainName}
+    dev: dev-headers-api.${self:provider.domainName}
+  customDomain:
+    domainName: '${self:provider.stage}-api.${self:provider.domainName}'
+    basePath: ''
+    stage: ${self:provider.stage}
+    certificateName: '${self:provider.stage}-api.${self:provider.domainName}'
+    createRoute53Record: true
+    endpointType: 'regional'
+  allowed-headers:
+    - Content-Type
+    - X-Amz-Date
+    - Authorization
+    - X-Api-Key
+    - X-Amz-Security-Token
+    - X-Amz-User-Agent
+    - X-Adg-Session
+  origin: '*'
+  corsConfig:
+    origin: ${self:custom.origin}
+    headers: ${self:custom.allowed-headers}
+    allowCredentials: true
+  warmup:
+    enabled: true # Whether to warm up functions by default or not 
+    folderName: '.warmup' # Name of the folder created for the generated warmup  
+    cleanFolder: false
+    memorySize: 256
+    vpc: false
+    events:
+      - schedule: 'cron(0/5 8-17 ? * MON-FRI *)' # Run WarmUp every 5 minutes Mon-Fri between 8:00am and 5:55pm (UTC) 
+    package:
+      individually: true
+    timeout: 20
+    prewarm: true 
+
+functions:
+  basic-check:
+    handler: src/headers/index.handler
+    memorySize: 256
+    timeout: 15
+    warmup: ${self:custom.warmup}
+    events:
+      - http:
+          path: api/v1/headers/check
+          method: post
+          integration: lambda-proxy
+          cors: ${self:custom.corsConfig}
