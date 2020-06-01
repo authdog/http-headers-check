@@ -10,15 +10,6 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "build",
     "baseUrl": ".",
-    "paths": {
-      "~schema": ["src/schema"],
-      "~resolvers": ["src/resolvers"],
-      "~queries": ["src/resolvers/queries"],
-      "~mutations": ["src/resolvers/mutations"],
-      "~models": ["src/models"],
-      "~server": ["src/main"],
-      "~constants": ["src/constants"]
-    },
     "lib": ["es6"],
     "sourceMap": true,
     "strictNullChecks": false,
@@ -27,8 +18,7 @@
     "skipLibCheck": true
   },
   "include": [
-      "./src/**/*",
-      "./db/**/*"
+      "./src/**/*"
   ],
   "exclude": [
     "./node_modules/*"
