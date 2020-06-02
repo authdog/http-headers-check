@@ -10,6 +10,7 @@ module.exports = {
     },
     testMatch: ["**/test/**/*.test.(ts|js)", "**/**/*.test.(ts|js)"],
     testEnvironment: "node",
-    roots: ['..']
+    rootDir: '..',
+    collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
 };
   
