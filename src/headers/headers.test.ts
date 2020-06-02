@@ -1,7 +1,7 @@
 import {securityChecks} from './rules'
 import {validateHeaders} from './utils'
 
-test('test headers App Netlify', () => {
+test('test headers Netlify', () => {
     const sample_headers_netlify = {
         "cache-control":"public, max-age=0, must-revalidate",
         "content-type":"text/html; charset=UTF-8",
@@ -66,7 +66,7 @@ test('test headers App Netlify', () => {
 
 })
 
-test('test headers app Microsoft', () => {
+test('test headers Microsoft', () => {
     const sample_headers_microsoft = {
         "cache-control":"no-cache, no-store, no-transform",
         "pragma":"no-cache",
