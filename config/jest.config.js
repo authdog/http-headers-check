@@ -9,6 +9,7 @@ module.exports = {
       "^.+\\.(ts)$": "ts-jest"
     },
     testMatch: ["**/test/**/*.test.(ts|js)", "**/**/*.test.(ts|js)"],
-    testEnvironment: "node"
+    testEnvironment: "node",
+    roots: ['..']
 };
   

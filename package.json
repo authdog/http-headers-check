@@ -13,7 +13,7 @@
   "private": true,
   "scripts": {
     ".": "sls --stage=local offline start",
-    "test": "jest --collect-coverage",
+    "test": "jest --config config/jest.config.js --collect-coverage",
     "count-lines": "find src -name '*.ts' | xargs cat | wc -l",
     "count-chars": "find src -name '*.ts' | xargs cat | wc -c"
   },

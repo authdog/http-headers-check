@@ -5,7 +5,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   region: us-east-1
-  environment: ${file(./vars/secret.yml):${opt:stage, self:provider.stage}}
+  # environment: ${file(./vars/secret.yml):${opt:stage, self:provider.stage}}
   stage: prod
   domainName: authdog.co
 
@@ -17,7 +17,7 @@ plugins:
 
 custom:
   webpack:
-    webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
+    webpackConfig: 'config/webpack.config.js'   # Name of webpack configuration file
     includeModules: false   # Node modules configuration for packaging
     packager: 'yarn'   # Packager that will be used to package your external modules
     excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
