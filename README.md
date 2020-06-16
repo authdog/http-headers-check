@@ -1,6 +1,6 @@
 # Authdog Headers Check API
 
-![](https://github.com/authdog/core-api/workflows/adg-hhc-ci/badge.svg)
+![adg-hhc-ci](https://github.com/authdog/http-headers-check/workflows/adg-hhc-ci/badge.svg)
 
 # Prerequisites
 
