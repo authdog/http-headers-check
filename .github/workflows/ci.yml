@@ -1,4 +1,4 @@
-name: Authdog API CI
+name: adg-hhc-ci
 
 on: [push]
 
