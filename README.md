@@ -1,5 +1,7 @@
 # Authdog Headers Check API
 
+![](https://github.com/authdog/core-api/workflows/adg-hhc-ci/badge.svg)
+
 # Prerequisites
 
 - yarn
