@@ -1,4 +1,4 @@
-name: adg-hc-ci
+name: adg-hhc-ci
 
 on: [push]
 
