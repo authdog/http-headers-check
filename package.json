@@ -27,7 +27,7 @@
     "@types/jest": "26.0.0",
     "@types/node": "13.13.12",
     "@types/uuid": "8.0.0",
-    "@types/validator": "13.0.0",
+    "@types/validator": "13.1.0",
     "axios": "0.19.2",
     "babel-core": "6.26.3",
     "babel-loader": "8.1.0",
