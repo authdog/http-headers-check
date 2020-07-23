@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/aws-lambda": "8.10.59",
     "@types/bluebird": "3.5.32",
-    "@types/node": "13.13.14",
+    "@types/node": "13.13.15",
     "@types/jest": "26.0.6",
     "@types/uuid": "8.0.0",
     "@types/validator": "13.1.0",
