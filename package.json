@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@types/aws-lambda": "8.10.71",
+    "@types/aws-lambda": "8.10.72",
     "@types/bluebird": "3.5.33",
     "@types/node": "13.13.41",
     "@types/jest": "26.0.20",
