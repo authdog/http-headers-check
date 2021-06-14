@@ -35,7 +35,7 @@
     "dotenv": "10.0.0",
     "jest": "27.0.4",
     "serverless-offline": "7.0.0",
-    "serverless-plugin-warmup": "5.2.3",
+    "serverless-plugin-warmup": "5.3.1",
     "serverless-webpack": "5.5.1",
     "ts-jest": "27.0.3",
     "ts-loader": "9.2.3",
