@@ -23,7 +23,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/aws-lambda": "8.10.77",
-    "@types/bluebird": "3.5.35",
+    "@types/bluebird": "3.5.36",
     "@types/node": "16.0.0",
     "@types/jest": "26.0.23",
     "@types/uuid": "8.3.1",
